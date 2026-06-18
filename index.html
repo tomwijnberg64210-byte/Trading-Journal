@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="Trading Journal"/>
+  <meta name="theme-color" content="#07111c"/>
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMGExZjNjIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBkMmQ0YSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzOGJkZjgiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNjM2NmYxIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJmaWxsIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzOGJkZjg7c3RvcC1vcGFjaXR5OjAuMyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzOGJkZjg7c3RvcC1vcGFjaXR5OjAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiByeD0iNDAiIGZpbGw9InVybCgjYmcpIi8+CiAgPHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDU2LDE4OSwyNDgsMC4xNSkiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gR3JpZCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMjUiIHkxPSI2MCIgeDI9IjE1NSIgeTI9IjYwIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIvPgogIDxsaW5lIHgxPSIyNSIgeTE9IjkwIiB4Mj0iMTU1IiB5Mj0iOTAiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPGxpbmUgeDE9IjI1IiB5MT0iMTIwIiB4Mj0iMTU1IiB5Mj0iMTIwIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIvPgogIDwhLS0gQXJlYSBmaWxsIC0tPgogIDxwYXRoIGQ9Ik0yNSwxMjUgTDU1LDEwNSBMODUsMTE1IEwxMTAsNzUgTDEzNSw1NSBMMTU1LDQwIEwxNTUsMTQwIEwyNSwxNDAgWiIgZmlsbD0idXJsKCNmaWxsKSIvPgogIDwhLS0gQ2hhcnQgbGluZSAtLT4KICA8cG9seWxpbmUgcG9pbnRzPSIyNSwxMjUgNTUsMTA1IDg1LDExNSAxMTAsNzUgMTM1LDU1IDE1NSw0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2xpbmUpIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDwhLS0gRG90cyAtLT4KICA8Y2lyY2xlIGN4PSIxMTAiIGN5PSI3NSIgcj0iNSIgZmlsbD0iIzM4YmRmOCIvPgogIDxjaXJjbGUgY3g9IjE1NSIgY3k9IjQwIiByPSI2IiBmaWxsPSIjNjM2NmYxIi8+CiAgPGNpcmNsZSBjeD0iMTU1IiBjeT0iNDAiIHI9IjEwIiBmaWxsPSJyZ2JhKDk5LDEwMiwyNDEsMC4zKSIvPgo8L3N2Zz4="/>
+  <title>Trading Journal</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+    body{background:#07111c;color:#e2e8f0;font-family:'SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;padding-bottom:48px;}
+    input{font-family:inherit;}
+
+    .topbar{background:#0a1825;padding:56px 20px 16px;border-bottom:1px solid rgba(56,189,248,0.1);position:sticky;top:0;z-index:100;}
+    .topbar-inner{display:flex;align-items:center;gap:12px;}
+    .topbar-icon{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#38bdf8,#6366f1);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+    .topbar-title{font-size:1.25rem;font-weight:700;letter-spacing:-0.02em;color:#f1f5f9;}
+    .topbar-sub{font-size:0.7rem;color:#475569;letter-spacing:0.07em;text-transform:uppercase;}
+
+    .weeknav{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:#0d1f2d;border-bottom:1px solid rgba(56,189,248,0.08);}
+    .weeknav button{background:rgba(56,189,248,0.1);border:none;color:#38bdf8;border-radius:8px;padding:7px 14px;font-size:0.9rem;cursor:pointer;font-weight:600;}
+    .weeknav span{font-size:0.8rem;color:#94a3b8;font-weight:500;text-align:center;flex:1;padding:0 8px;}
+
+    .accounts{padding:16px 12px;display:flex;flex-direction:column;gap:14px;}
+    .account-card{background:#0d1f2d;border-radius:14px;border:1px solid rgba(56,189,248,0.1);overflow:hidden;}
+    .account-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.05);}
+    .account-info .firm{font-weight:700;font-size:1rem;color:#f1f5f9;}
+    .account-info .subname{font-size:0.73rem;color:#64748b;margin-top:2px;}
+    .account-capital{font-size:0.8rem;color:#64748b;cursor:pointer;border-bottom:1px dashed #334155;}
+    .account-del{background:none;border:none;color:#334155;font-size:1.1rem;cursor:pointer;padding:4px 8px;}
+
+    .days-grid{display:grid;grid-template-columns:repeat(5,1fr);}
+    .day-col{border-right:1px solid rgba(255,255,255,0.04);}
+    .day-col:last-child{border-right:none;}
+    .day-label{font-size:0.65rem;color:#475569;text-transform:uppercase;letter-spacing:0.07em;text-align:center;padding:8px 4px 6px;background:#0a1825;}
+    .day-input-wrap{padding:6px 4px;}
+    .day-input{width:100%;background:#07111c;border:1px solid #1e3a4a;border-radius:8px;color:#94a3b8;font-size:0.82rem;padding:9px 4px;text-align:center;outline:none;-webkit-appearance:none;appearance:none;}
+    .day-input:focus{border-color:#38bdf8;color:#f1f5f9;}
+    .day-input.positive{color:#22c55e;border-color:rgba(34,197,94,0.3);background:rgba(34,197,94,0.05);}
+    .day-input.negative{color:#ef4444;border-color:rgba(239,68,68,0.3);background:rgba(239,68,68,0.05);}
+    .day-input.zero{color:#e2e8f0;}
+
+    .account-total{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-top:1px solid rgba(255,255,255,0.05);background:#0a1825;}
+    .account-total .label{font-size:0.72rem;color:#475569;text-transform:uppercase;letter-spacing:0.07em;}
+    .account-total .val{font-size:1rem;font-weight:700;}
+    .account-cum{font-size:0.75rem;color:#64748b;margin-left:12px;}
+
+    .add-btn{margin:0 12px;background:rgba(56,189,248,0.06);border:1px dashed rgba(56,189,248,0.25);color:#38bdf8;border-radius:12px;padding:14px;font-size:0.92rem;font-weight:600;cursor:pointer;width:calc(100% - 24px);display:block;text-align:center;}
+    .add-form{margin:0 12px;background:#0d1f2d;border:1px solid rgba(56,189,248,0.15);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px;}
+    .add-form label{font-size:0.72rem;color:#64748b;text-transform:uppercase;letter-spacing:0.07em;display:block;margin-bottom:4px;}
+    .add-form input{width:100%;background:#07111c;border:1px solid #1e3a4a;border-radius:8px;color:#f1f5f9;padding:10px 12px;font-size:0.92rem;outline:none;}
+    .add-form input:focus{border-color:#38bdf8;}
+    .add-form-btns{display:flex;gap:8px;}
+    .btn-primary{background:linear-gradient(135deg,#38bdf8,#6366f1);border:none;color:#fff;border-radius:8px;padding:11px 0;font-weight:700;font-size:0.9rem;cursor:pointer;flex:1;}
+    .btn-cancel{background:none;border:1px solid #1e3a4a;color:#64748b;border-radius:8px;padding:11px 0;font-size:0.9rem;cursor:pointer;flex:1;}
+
+    .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px 12px 0;}
+    .stat-card{background:#0d1f2d;border:1px solid rgba(56,189,248,0.08);border-radius:12px;padding:14px;}
+    .stat-icon{font-size:1.1rem;margin-bottom:6px;}
+    .stat-label{font-size:0.65rem;color:#475569;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:4px;}
+    .stat-value{font-size:1.05rem;font-weight:800;}
+
+    .section-title{font-size:0.7rem;color:#475569;text-transform:uppercase;letter-spacing:0.1em;padding:20px 12px 8px;font-weight:600;}
+    .finance-card{margin:0 12px;background:#0d1f2d;border:1px solid rgba(99,102,241,0.15);border-radius:14px;overflow:hidden;}
+    .finance-month-nav{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,0.05);background:#0a1825;}
+    .finance-month-nav button{background:rgba(99,102,241,0.12);border:none;color:#a78bfa;border-radius:7px;padding:5px 12px;font-size:0.85rem;cursor:pointer;font-weight:600;}
+    .finance-month-nav span{font-size:0.85rem;color:#94a3b8;font-weight:500;}
+
+    .subsection-label{padding:10px 14px 4px;font-size:0.7rem;color:#64748b;text-transform:uppercase;letter-spacing:0.08em;border-top:1px solid rgba(255,255,255,0.04);}
+    .payout-list{padding:6px 12px;display:flex;flex-direction:column;gap:6px;}
+    .payout-row{display:flex;align-items:center;gap:8px;background:#07111c;border-radius:8px;padding:8px 10px;}
+    .payout-desc{flex:1;background:transparent;border:none;color:#94a3b8;font-size:0.82rem;outline:none;min-width:0;}
+    .payout-desc::placeholder{color:#334155;}
+    .payout-amt{width:90px;background:transparent;border:none;color:#22c55e;font-size:0.88rem;font-weight:600;text-align:right;outline:none;-webkit-appearance:none;}
+    .payout-amt::placeholder{color:#334155;}
+    .payout-del{background:none;border:none;color:#334155;cursor:pointer;font-size:0.9rem;padding:0 2px;flex-shrink:0;}
+    .add-payout-btn{margin:4px 12px 10px;background:rgba(99,102,241,0.06);border:1px dashed rgba(99,102,241,0.2);color:#a78bfa;border-radius:9px;padding:10px;font-size:0.85rem;font-weight:600;cursor:pointer;display:block;text-align:center;width:calc(100% - 24px);}
+
+    .cost-item{padding:10px 16px;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:space-between;}
+    .cost-label{font-size:0.82rem;color:#94a3b8;}
+    .cost-input{width:100px;background:#07111c;border:1px solid #1e3a4a;border-radius:7px;color:#a78bfa;font-size:0.88rem;padding:6px 8px;text-align:right;outline:none;-webkit-appearance:none;}
+    .cost-input:focus{border-color:#a78bfa;}
+
+    .net-bar{display:grid;grid-template-columns:1fr 1fr 1fr;background:#0a1825;border-top:2px solid rgba(99,102,241,0.2);}
+    .net-cell{padding:12px 10px;border-right:1px solid rgba(255,255,255,0.05);}
+    .net-cell:last-child{border-right:none;}
+    .net-cell-label{font-size:0.6rem;color:#475569;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:3px;}
+    .net-cell-val{font-size:0.92rem;font-weight:800;}
+
+    .hint{text-align:center;color:#1e3a4a;font-size:0.7rem;padding:16px 12px 0;}
+    .green{color:#22c55e;} .red{color:#ef4444;} .neutral{color:#e2e8f0;} .muted{color:#94a3b8;}
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-icon">📈</div>
+    <div>
+      <div class="topbar-title">Trading Journal</div>
+      <div class="topbar-sub">Prop Firms · Suivi des performances</div>
+    </div>
+  </div>
+</div>
+
+<div class="weeknav">
+  <button onclick="changeWeek(-1)">← Préc.</button>
+  <span id="weekLabel"></span>
+  <button onclick="changeWeek(1)">Suiv. →</button>
+</div>
+
+<div class="accounts" id="accountsContainer"></div>
+
+<div id="addSection">
+  <button class="add-btn" onclick="showAddForm()">+ Ajouter un compte</button>
+</div>
+
+<div class="stats" id="statsContainer"></div>
+
+<div class="section-title">💳 Finances du mois</div>
+<div class="finance-card">
+  <div class="finance-month-nav">
+    <button onclick="changeFinanceMonth(-1)">← Préc.</button>
+    <span id="financeMonthLabel"></span>
+    <button onclick="changeFinanceMonth(1)">Suiv. →</button>
+  </div>
+  <div class="subsection-label">💸 Payouts reçus</div>
+  <div class="payout-list" id="payoutList"></div>
+  <button class="add-payout-btn" onclick="addPayout()">+ Ajouter un payout</button>
+  <div class="subsection-label" style="border-top:1px solid rgba(255,255,255,0.06);">🧾 Coûts des comptes (abonnements)</div>
+  <div id="costsList"></div>
+  <div class="net-bar" id="netBar"></div>
+</div>
+
+<div class="hint" style="padding-bottom:32px;">Appuie sur une cellule pour entrer ton P&L · Lun–Ven uniquement</div>
+
+<script>
+// ---- HELPERS ----
+function getMondayOf(d) {
+  var x = new Date(d);
+  x.setHours(0,0,0,0);
+  var day = x.getDay();
+  x.setDate(x.getDate() + (day===0 ? -6 : 1-day));
+  return x;
+}
+function getWeekDays(mondayISO) {
+  var m = new Date(mondayISO);
+  var arr = [];
+  for (var i=0;i<5;i++) { var d=new Date(m); d.setDate(d.getDate()+i); arr.push(d); }
+  return arr;
+}
+function fmtDate(d) {
+  var names=['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
+  return names[d.getDay()]+' '+pad(d.getDate())+'/'+pad(d.getMonth()+1);
+}
+function pad(n){ return n<10?'0'+n:''+n; }
+function fmtMoney(v) {
+  var n=parseFloat(v);
+  if(isNaN(n)) return '—';
+  return (n>=0?'+':'')+n.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' $';
+}
+function colorCls(v) {
+  if(v===null||v===undefined) return 'muted';
+  var n=parseFloat(v);
+  if(isNaN(n)) return 'muted';
+  if(n>0) return 'green';
+  if(n<0) return 'red';
+  return 'neutral';
+}
+function pnlCls(v) {
+  if(v===''||v===null||v===undefined) return '';
+  var n=parseFloat(v);
+  if(isNaN(n)) return '';
+  if(n>0) return 'positive';
+  if(n<0) return 'negative';
+  return 'zero';
+}
+function pnlKey(aid,di){ return aid+'-'+di; }
+
+// ---- STATE ----
+function defaultState() {
+  return {
+    accounts: [{id:1, firm:'Lucide', name:'Compte 1', value:50000}],
+    pnl: {},
+    currentMonday: getMondayOf(new Date()).toISOString(),
+    financeMonth: '',
+    finance: {}
+  };
+}
+var raw = null;
+try { raw = JSON.parse(localStorage.getItem('tj_state')); } catch(e){}
+var state = raw || defaultState();
+if (!state.finance) state.finance = {};
+if (!state.financeMonth) state.financeMonth = '';
+
+function save(){ try{ localStorage.setItem('tj_state', JSON.stringify(state)); }catch(e){} }
+
+// ---- FINANCE MONTH ----
+function getCurrentMonth() {
+  if (!state.financeMonth) {
+    var n = new Date();
+    state.financeMonth = n.getFullYear()+'-'+pad(n.getMonth()+1);
+  }
+  return state.financeMonth;
+}
+function changeFinanceMonth(dir) {
+  var parts = getCurrentMonth().split('-');
+  var y=parseInt(parts[0]), m=parseInt(parts[1]);
+  var d = new Date(y, m-1+dir, 1);
+  state.financeMonth = d.getFullYear()+'-'+pad(d.getMonth()+1);
+  save(); renderFinance();
+}
+function getFinanceData() {
+  var key = getCurrentMonth();
+  if (!state.finance[key]) state.finance[key] = {payouts:[], costs:{}};
+  return state.finance[key];
+}
+
+// ---- WEEK ----
+function changeWeek(dir) {
+  var d = new Date(state.currentMonday);
+  d.setDate(d.getDate()+dir*7);
+  state.currentMonday = d.toISOString();
+  save(); render();
+}
+
+// ---- PNL ----
+function setPnl(aid, di, val) {
+  var k = pnlKey(aid,di);
+  if (val===''||val===null) delete state.pnl[k];
+  else state.pnl[k] = val;
+  save();
+  refreshAccountTotal(aid);
+  renderStats();
+}
+function updateInputStyle(inp) {
+  var v = parseFloat(inp.value);
+  inp.className = 'day-input' + (isNaN(v)||inp.value==='' ? '' : v>0?' positive':v<0?' negative':' zero');
+}
+function getWeeklyTotal(aid) {
+  var t=0, has=false;
+  for(var i=0;i<5;i++){var v=parseFloat(state.pnl[pnlKey(aid,i)]);if(!isNaN(v)){t+=v;has=true;}}
+  return has?t:null;
+}
+function getCumulative(aid) {
+  var t=0;
+  Object.keys(state.pnl).forEach(function(k){
+    if(k.indexOf(aid+'-')===0){var v=parseFloat(state.pnl[k]);if(!isNaN(v))t+=v;}
+  });
+  return t;
+}
+function refreshAccountTotal(aid) {
+  var wt=getWeeklyTotal(aid), cum=getCumulative(aid);
+  var grid=document.getElementById('grid-'+aid);
+  if(!grid) return;
+  var card=grid.parentElement;
+  var tot=card.querySelector('.acc-wt');
+  var cumEl=card.querySelector('.acc-cum-val');
+  if(tot){ tot.className='val acc-wt '+colorCls(wt); tot.textContent=wt===null?'—':fmtMoney(wt); }
+  if(cumEl){ cumEl.className=colorCls(cum||null); cumEl.textContent=cum!==0?fmtMoney(cum):'—'; }
+}
+
+// ---- CAPITAL ----
+function editCapital(aid, el) {
+  var acc = null;
+  for(var i=0;i<state.accounts.length;i++){if(state.accounts[i].id===aid){acc=state.accounts[i];break;}}
+  if(!acc) return;
+  var inp=document.createElement('input');
+  inp.type='number'; inp.value=acc.value;
+  inp.style.cssText='width:90px;background:#07111c;border:1px solid #38bdf8;border-radius:6px;color:#f1f5f9;padding:4px 7px;font-size:0.8rem;text-align:center;outline:none;';
+  el.replaceWith(inp);
+  inp.focus(); inp.select();
+  function done(){
+    var v=parseFloat(inp.value);
+    acc.value=isNaN(v)?acc.value:v;
+    save();
+    var span=document.createElement('span');
+    span.className='account-capital';
+    span.title='Modifier le capital';
+    span.textContent=acc.value.toLocaleString('fr-FR')+' $';
+    span.onclick=function(){ editCapital(aid,span); };
+    inp.replaceWith(span);
+  }
+  inp.addEventListener('blur',done);
+  inp.addEventListener('keydown',function(e){if(e.key==='Enter')inp.blur();});
+}
+
+// ---- ACCOUNTS ----
+function removeAccount(id) {
+  if(!confirm('Supprimer ce compte ?')) return;
+  state.accounts = state.accounts.filter(function(a){return a.id!==id;});
+  Object.keys(state.pnl).forEach(function(k){if(k.indexOf(id+'-')===0)delete state.pnl[k];});
+  save(); render(); renderFinance();
+}
+function showAddForm() {
+  document.getElementById('addSection').innerHTML =
+    '<div class="add-form">' +
+    '<div><label>Firme</label><input id="nFirm" value="Lucide" placeholder="ex: Lucide"/></div>' +
+    '<div><label>Nom du compte</label><input id="nName" placeholder="ex: Compte 2"/></div>' +
+    '<div><label>Capital ($)</label><input id="nValue" type="number" placeholder="50000"/></div>' +
+    '<div class="add-form-btns"><button class="btn-primary" onclick="addAccount()">Ajouter</button><button class="btn-cancel" onclick="cancelAdd()">Annuler</button></div>' +
+    '</div>';
+}
+function addAccount() {
+  var firm=document.getElementById('nFirm').value.trim();
+  var name=document.getElementById('nName').value.trim();
+  var value=parseFloat(document.getElementById('nValue').value)||0;
+  if(!name){alert('Entre un nom pour le compte.');return;}
+  state.accounts.push({id:Date.now(),firm:firm||'Lucide',name:name,value:value});
+  save(); cancelAdd(); render(); renderFinance();
+}
+function cancelAdd() {
+  document.getElementById('addSection').innerHTML='<button class="add-btn" onclick="showAddForm()">+ Ajouter un compte</button>';
+}
+
+// ---- PAYOUTS ----
+function addPayout() {
+  var data=getFinanceData();
+  data.payouts.push({label:'',amount:''});
+  save(); renderPayouts(data); renderNet(data);
+}
+function updatePayout(i,field,val) {
+  var data=getFinanceData();
+  data.payouts[i][field]=val;
+  save(); renderNet(data);
+}
+function removePayout(i) {
+  var data=getFinanceData();
+  data.payouts.splice(i,1);
+  save(); renderPayouts(data); renderNet(data);
+}
+function renderPayouts(data) {
+  var list=document.getElementById('payoutList');
+  if(!list) return;
+  list.innerHTML='';
+  var payouts=data.payouts||[];
+  for(var i=0;i<payouts.length;i++){
+    (function(idx){
+      var p=payouts[idx];
+      var row=document.createElement('div');
+      row.className='payout-row';
+      var desc=document.createElement('input');
+      desc.type='text'; desc.className='payout-desc';
+      desc.placeholder='Description (ex: Lucide C1)'; desc.value=p.label||'';
+      desc.addEventListener('change',function(){updatePayout(idx,'label',this.value);});
+      var amt=document.createElement('input');
+      amt.type='number'; amt.className='payout-amt';
+      amt.placeholder='0.00'; amt.value=p.amount||'';
+      amt.addEventListener('change',function(){updatePayout(idx,'amount',this.value);});
+      amt.addEventListener('input',function(){renderNet(getFinanceData());});
+      var del=document.createElement('button');
+      del.className='payout-del'; del.textContent='✕';
+      del.addEventListener('click',function(){removePayout(idx);});
+      row.appendChild(desc); row.appendChild(amt); row.appendChild(del);
+      list.appendChild(row);
+    })(i);
+  }
+}
+
+// ---- COSTS ----
+function updateCost(key,val) {
+  var data=getFinanceData();
+  data.costs[key]=val;
+  save(); renderNet(data);
+}
+function renderCosts(data) {
+  var list=document.getElementById('costsList');
+  if(!list) return;
+  list.innerHTML='';
+  for(var i=0;i<state.accounts.length;i++){
+    (function(acc){
+      var key=''+acc.id;
+      var val=(data.costs&&data.costs[key])||'';
+      var item=document.createElement('div');
+      item.className='cost-item';
+      var lbl=document.createElement('span');
+      lbl.className='cost-label';
+      lbl.textContent=acc.firm+' – '+acc.name;
+      var inp=document.createElement('input');
+      inp.className='cost-input'; inp.type='number'; inp.placeholder='0.00'; inp.value=val;
+      inp.addEventListener('change',function(){updateCost(key,this.value);});
+      inp.addEventListener('input',function(){updateCost(key,this.value);});
+      item.appendChild(lbl); item.appendChild(inp);
+      list.appendChild(item);
+    })(state.accounts[i]);
+  }
+}
+
+// ---- NET ----
+function renderNet(data) {
+  var bar=document.getElementById('netBar');
+  if(!bar) return;
+  var payouts=data.payouts||[];
+  var totalP=0;
+  for(var i=0;i<payouts.length;i++){var n=parseFloat(payouts[i].amount);if(!isNaN(n))totalP+=n;}
+  var costs=data.costs||{};
+  var totalC=0;
+  Object.keys(costs).forEach(function(k){var n=parseFloat(costs[k]);if(!isNaN(n))totalC+=n;});
+  var net=totalP-totalC;
+  var hasAny=totalP>0||totalC>0;
+  bar.innerHTML=
+    '<div class="net-cell"><div class="net-cell-label">💸 Payouts</div><div class="net-cell-val green">'+(totalP>0?fmtMoney(totalP):'—')+'</div></div>'+
+    '<div class="net-cell"><div class="net-cell-label">🧾 Coûts</div><div class="net-cell-val red">'+(totalC>0?('−'+totalC.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' $'):'—')+'</div></div>'+
+    '<div class="net-cell"><div class="net-cell-label">📊 Net</div><div class="net-cell-val '+colorCls(hasAny?net:null)+'">'+(hasAny?fmtMoney(net):'—')+'</div></div>';
+}
+
+// ---- RENDER ----
+function renderWeekLabel() {
+  var days=getWeekDays(state.currentMonday);
+  var opts={day:'2-digit',month:'long'};
+  document.getElementById('weekLabel').textContent=
+    days[0].toLocaleDateString('fr-FR',opts)+' – '+days[4].toLocaleDateString('fr-FR',Object.assign({},opts,{year:'numeric'}));
+}
+function renderAccounts() {
+  var days=getWeekDays(state.currentMonday);
+  var c=document.getElementById('accountsContainer');
+  c.innerHTML='';
+  for(var ai=0;ai<state.accounts.length;ai++){
+    (function(acc){
+      var wt=getWeeklyTotal(acc.id), cum=getCumulative(acc.id);
+      var card=document.createElement('div');
+      card.className='account-card';
+
+      // header
+      var hdr=document.createElement('div'); hdr.className='account-header';
+      var info=document.createElement('div'); info.className='account-info';
+      var firmEl=document.createElement('div'); firmEl.className='firm'; firmEl.textContent=acc.firm;
+      var subEl=document.createElement('div'); subEl.className='subname'; subEl.textContent=acc.name;
+      info.appendChild(firmEl); info.appendChild(subEl);
+      var right=document.createElement('div'); right.style.cssText='display:flex;align-items:center;gap:10px;';
+      var capSpan=document.createElement('span'); capSpan.className='account-capital';
+      capSpan.textContent=acc.value.toLocaleString('fr-FR')+' $';
+      capSpan.title='Modifier le capital';
+      capSpan.addEventListener('click',(function(a,s){return function(){editCapital(a.id,s);};})(acc,capSpan));
+      var delBtn=document.createElement('button'); delBtn.className='account-del'; delBtn.textContent='✕';
+      delBtn.addEventListener('click',(function(id){return function(){removeAccount(id);};})(acc.id));
+      right.appendChild(capSpan); right.appendChild(delBtn);
+      hdr.appendChild(info); hdr.appendChild(right);
+      card.appendChild(hdr);
+
+      // days grid
+      var grid=document.createElement('div'); grid.className='days-grid'; grid.id='grid-'+acc.id;
+      for(var di=0;di<5;di++){
+        (function(dayIdx){
+          var col=document.createElement('div'); col.className='day-col';
+          var dlbl=document.createElement('div'); dlbl.className='day-label'; dlbl.textContent=fmtDate(days[dayIdx]);
+          var wrap=document.createElement('div'); wrap.className='day-input-wrap';
+          var val=state.pnl[pnlKey(acc.id,dayIdx)]||'';
+          var inp=document.createElement('input');
+          inp.className='day-input '+pnlCls(val);
+          inp.type='number'; inp.step='0.01'; inp.placeholder='0.00'; inp.value=val;
+          inp.addEventListener('change',(function(a,d){return function(){setPnl(a,d,this.value);};})(acc.id,dayIdx));
+          inp.addEventListener('input',function(){updateInputStyle(this);});
+          wrap.appendChild(inp); col.appendChild(dlbl); col.appendChild(wrap); grid.appendChild(col);
+        })(di);
+      }
+      card.appendChild(grid);
+
+      // total row
+      var totRow=document.createElement('div'); totRow.className='account-total';
+      var totLbl=document.createElement('span'); totLbl.className='label'; totLbl.textContent='Semaine';
+      var totRight=document.createElement('div'); totRight.style.cssText='display:flex;align-items:center;gap:8px;';
+      var totVal=document.createElement('span'); totVal.className='val acc-wt '+colorCls(wt);
+      totVal.textContent=wt===null?'—':fmtMoney(wt);
+      var cumSpan=document.createElement('span'); cumSpan.className='account-cum';
+      cumSpan.textContent='Cumul : ';
+      var cumVal=document.createElement('span'); cumVal.className='acc-cum-val '+colorCls(cum||null);
+      cumVal.textContent=cum!==0?fmtMoney(cum):'—';
+      cumSpan.appendChild(cumVal);
+      totRight.appendChild(totVal); totRight.appendChild(cumSpan);
+      totRow.appendChild(totLbl); totRow.appendChild(totRight);
+      card.appendChild(totRow);
+      c.appendChild(card);
+    })(state.accounts[ai]);
+  }
+}
+function renderStats() {
+  var days=getWeekDays(state.currentMonday);
+  var dayTotals=[];
+  for(var i=0;i<5;i++){
+    var t=0,has=false;
+    for(var j=0;j<state.accounts.length;j++){var v=parseFloat(state.pnl[pnlKey(state.accounts[j].id,i)]);if(!isNaN(v)){t+=v;has=true;}}
+    dayTotals.push(has?t:null);
+  }
+  var weekTotal=0,weekHas=false;
+  for(var i=0;i<dayTotals.length;i++){if(dayTotals[i]!==null){weekTotal+=dayTotals[i];weekHas=true;}}
+  var allCum=0;
+  for(var i=0;i<state.accounts.length;i++){allCum+=getCumulative(state.accounts[i].id);}
+  var posDay=0; for(var i=0;i<dayTotals.length;i++){if(dayTotals[i]!==null&&dayTotals[i]>0)posDay++;}
+  var valid=[]; for(var i=0;i<dayTotals.length;i++){if(dayTotals[i]!==null)valid.push(dayTotals[i]);}
+  var best=valid.length?Math.max.apply(null,valid):null;
+
+  var stats=[
+    {icon:'📅',label:'P&L semaine',val:weekHas?fmtMoney(weekTotal):'—',cls:colorCls(weekHas?weekTotal:null)},
+    {icon:'💰',label:'Total cumulatif',val:allCum!==0?fmtMoney(allCum):'—',cls:colorCls(allCum||null)},
+    {icon:'✅',label:'Jours positifs',val:posDay+' / 5',cls:'green'},
+    {icon:'🏆',label:'Meilleur jour',val:best!==null?fmtMoney(best):'—',cls:'green'}
+  ];
+  var c=document.getElementById('statsContainer'); c.innerHTML='';
+  for(var i=0;i<stats.length;i++){
+    var s=stats[i];
+    c.innerHTML+='<div class="stat-card"><div class="stat-icon">'+s.icon+'</div><div class="stat-label">'+s.label+'</div><div class="stat-value '+s.cls+'">'+s.val+'</div></div>';
+  }
+}
+function renderFinance() {
+  var key=getCurrentMonth();
+  var parts=key.split('-');
+  var y=parseInt(parts[0]),m=parseInt(parts[1]);
+  var name=new Date(y,m-1,1).toLocaleDateString('fr-FR',{month:'long',year:'numeric'});
+  document.getElementById('financeMonthLabel').textContent=name.charAt(0).toUpperCase()+name.slice(1);
+  var data=getFinanceData();
+  renderPayouts(data);
+  renderCosts(data);
+  renderNet(data);
+}
+
+function render() {
+  renderWeekLabel();
+  renderAccounts();
+  renderStats();
+}
+
+// ---- INIT ----
+render();
+renderFinance();
+</script>
+</body>
+</html>
